@@ -1,0 +1,21 @@
+.timer-table{
+    margin:1em auto;
+    border:1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    
+    .timer-row{
+        .timer-heading{
+            padding:0.5em 2em;
+            border-right: 1px solid black;
+        }
+      
+        .timer-data{
+            border-right: 1px solid black;
+            padding:0.5em 2em;
+        }
+    }
+    .timer-row:nth-child(odd){
+        background-color: $color4;
+    }
+}
