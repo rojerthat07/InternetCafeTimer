@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TimerSectionComponent } from './timer-section/timer-section.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TimerSectionComponent
   ],
   imports: [
     BrowserModule,
