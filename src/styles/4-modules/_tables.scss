@@ -13,6 +13,9 @@
         .timer-data{
             border-right: 1px solid black;
             padding:0.5em 2em;
+            font-weight: lighter;
+            font-family: font("font7");
+            text-transform: uppercase;
         }
     }
     .timer-row:nth-child(odd){

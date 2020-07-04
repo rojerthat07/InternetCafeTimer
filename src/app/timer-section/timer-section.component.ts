@@ -5,11 +5,38 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './timer-section.component.html',
   styleUrls: ['./timer-section.component.scss']
 })
-export class TimerSectionComponent implements OnInit {
+export class TimerSectionComponent {
 
   constructor() { }
 
-  ngOnInit(): void {
+  //Date and time
+  public date:any = new Date();
+  public hours12Format:string = (this.date.getHours() > 12 ?  this.date.getHours() - 12 : this.date.getHours() );
+
+
+  
+
+  //to diplay minutes with leading zeroes
+seconds_with_leading_zeros =(date = this.date) =>{ 
+  return (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
+}
+
+  //Forms Input 2 way data binding
+  public formId:number = 1;
+  public formName:string;
+  public formStart:string =  `${this.hours12Format}:${this.seconds_with_leading_zeros()}`;
+  public formEnd:string;
+  public formDuration:string;
+  public formBalance:string;
+
+  public inputs:any[] = []
+
+
+
+  onFormSubmit = () =>{
+    this.inputs.push({id:this.formId,name:this.formName,start:this.formStart,end:this.formEnd,duration:this.formDuration,balance:this.formBalance});
+    this.formId++;
+  
   }
 
 }

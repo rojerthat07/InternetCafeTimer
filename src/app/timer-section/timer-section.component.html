@@ -1,19 +1,50 @@
+<form #inputForm="ngForm" class="form">
 
+   
+    <div class="form__grouping">
+        <label class="form__label" for="">ID: </label>
+        <input [(ngModel)]="formId" disabled name="id" class="form__input" type="number" >
+    </div>
+    <div class="form__grouping">
+        <label class="form__label" for="">START: </label>
+        <input [(ngModel)]="formStart" disabled  name="start" class="form__input" type="text">
+    </div>
+    <div class="form__grouping">
+        <label class="form__label" for="">END: </label>
+        <input [(ngModel)]="formEnd" disabled  name="end" class="form__input" type="text">
+    </div>
+    <div class="form__grouping">
+        <label class="form__label" for="">NAME: </label>
+        <input [(ngModel)]="formName" name="name" class="form__input" type="text">
+    </div>
+
+ 
+    <div class="form__grouping">
+        <label class="form__label" for="">DURATION: </label>
+        <input [(ngModel)]="formDuration"  name="duration" class="form__input" type="text">
+    </div>
+    <div class="form__grouping">
+        <label class="form__label" for="">BALANCE: </label>
+        <input [(ngModel)]="formBalance"  name="balance" class="form__input" type="text">
+    </div>
+    <button (click)="onFormSubmit()" class="form__submit" type="submit">Submit</button>
+</form>
+<hr>
 <table class="timer-table">
     <tr class="timer-row">
-        <th class="timer-heading">MAC</th>
+        <th class="timer-heading">ID</th>
         <th class="timer-heading">NAME</th>
         <th class="timer-heading">START</th>
         <th class="timer-heading">END</th>
         <th class="timer-heading">DURATION</th>
-        <th class="timer-heading">CREDIT</th>
+        <th class="timer-heading">Balance</th>
     </tr>
-    <tr class="timer-row">
-        <td class="timer-data">34:34:77:77:77:77</td>
-        <td class="timer-data">Jer Carlo Catallo</td>
-        <td class="timer-data">5:00 P.M.</td>
-        <td class="timer-data">6:00 P.M.</td>
-        <td class="timer-data">1 Hour</td>
-        <td class="timer-data">15 Pesos</td>
+    <tr class="timer-row" *ngFor="let input of inputs">
+        <td class="timer-data"> {{input.id}}</td>
+        <td class="timer-data">{{input.name}}</td>
+        <td class="timer-data">{{input.start}}</td>
+        <td class="timer-data">{{input.end}}</td>
+        <td class="timer-data">{{input.duration}}</td>
+        <td class="timer-data">{{input.balance}}</td>
     </tr>
 </table>

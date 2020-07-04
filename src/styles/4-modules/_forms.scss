@@ -1,0 +1,34 @@
+.form{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin:1em;
+    .form__grouping{
+        display: grid;
+        grid-template-columns: 3fr 9fr;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+     
+        padding:.5em 1em;
+        .form__input{
+            font-size: .8em;
+        }
+        .form__label{
+            font-size: .8em;
+           margin: auto 0;
+            
+        }
+    }
+    .form__submit{
+     margin: 1em;
+        padding:.5em 1em;
+        border: none;
+        grid-column: 2;
+        &:hover{
+            background-color: rgb(200, 200, 200);
+        }
+    }
+}
