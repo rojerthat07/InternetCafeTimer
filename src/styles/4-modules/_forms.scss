@@ -15,6 +15,7 @@
         padding:.5em 1em;
         .form__input{
             font-size: .8em;
+            padding:1em 1em;
             font-family: font("font6");
           
         }
@@ -30,8 +31,12 @@
         padding:.5em 1em;
         border: none;
         grid-column: 2;
+        background-color: white;
+        color: black;
+        transition: .5s;
         &:hover{
-            background-color: rgb(200, 200, 200);
+            color:white;
+            background-color: $color3;
         }
     }
 }

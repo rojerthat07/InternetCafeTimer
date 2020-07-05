@@ -1,30 +1,31 @@
-<form #inputForm="ngForm" class="form">
+<form #inputForm="ngForm" class="form ">
 
-    <div class="form__grouping">
+    <div class="form__grouping form-group">
         <label class="form__label" for="">NAME: </label>
-        <input [(ngModel)]="formName" required name="name" class="form__input" type="text">
+        <input [(ngModel)]="formName" #name="ngModel" [class.is-invalid]="name.invalid && name.touched" required name="name" class="form__input form-control" type="text">
+        
     </div>
 
-    <div class="form__grouping">
+    <div class="form__grouping form-group">
         <label class="form__label" for="">DURATION(MINUTES):  </label>
-        <input [(ngModel)]="formDuration" required  name="duration" class="form__input" type="number">
+        <input [(ngModel)]="formDuration" required [class.is-invalid]="duration.invalid && duration.touched" #duration="ngModel" name="duration" class="form__input form-control" type="number">
     </div>
-    <div class="form__grouping">
+    <div class="form__grouping form-group">
         <label class="form__label" for="">BALANCE: </label>
-        <input [(ngModel)]="formBalance" required  name="balance" class="form__input" type="text">
+        <input [(ngModel)]="formBalance" required [class.is-invalid]="balance.invalid && balance.touched" #balance="ngModel" name="balance" class="form__input form-control" type="text">
     </div>
    
-    <div class="form__grouping">
+    <div class="form__grouping form-group">
         <label class="form__label" for="">ID: </label>
-        <input [(ngModel)]="formId" disabled name="id" class="form__input" type="number" >
+        <input [(ngModel)]="formId" disabled name="id" class="form__input form-control" type="number" >
     </div>
-    <div class="form__grouping">
+    <div class="form__grouping form-group">
         <label class="form__label" for="">START: </label>
-        <input [(ngModel)]="formStart" disabled  name="start" class="form__input" type="text">
+        <input [(ngModel)]="formStart" disabled  name="start" class="form__input form-control" type="text">
     </div>
-    <div class="form__grouping">
+    <div class="form__grouping form-group">
         <label class="form__label" for="">END: </label>
-        <input [(ngModel)]="formEnd" disabled  name="end" class="form__input" type="text">
+        <input [(ngModel)]="formEnd" disabled  name="end" class="form__input form-control" type="text">
     </div>
  
     <button (click)="onFormSubmit()" [disabled]="inputForm.invalid" class="form__submit" type="submit">Submit</button>
@@ -41,7 +42,7 @@
         <th class="timer-heading">Balance</th>
     </tr>
     <tr class="timer-row" *ngFor="let input of inputs">
-        <td class="timer-data"> {{input.id}}</td>
+        <td class="timer-data">{{input.id}}</td>
         <td class="timer-data">{{input.name}}</td>
         <td class="timer-data">{{input.start}}</td>
         <td class="timer-data">{{input.end}}</td>
