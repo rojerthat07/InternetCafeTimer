@@ -24,6 +24,7 @@ seconds_with_leading_zeros =(date = this.date) =>{
 
 ngOnInit():void{
   setInterval(()=>{
+    //Creating new date object every seconds to match the current time
     this.date = new Date()
     this.formStart = `${this.hours12Format}:${this.date.getMinutes()}:${this.seconds_with_leading_zeros()}`;
   },1000)
