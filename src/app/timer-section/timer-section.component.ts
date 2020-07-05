@@ -22,18 +22,33 @@ seconds_with_leading_zeros =(date = this.date) =>{
   return (date.getSeconds() < 10 ? '0' : '') + date.getSeconds();
 }
 
+minutes_with_leading_zeros =(date = this.date) =>{ 
+  return (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
+}
+
+
 ngOnInit():void{
   setInterval(()=>{
     //Creating new date object every seconds to match the current time
     this.date = new Date()
-    this.formStart = `${this.hours12Format}:${this.date.getMinutes()}:${this.seconds_with_leading_zeros()}`;
+    this.formStart = `${this.hours12Format}:${this.minutes_with_leading_zeros()}:${this.seconds_with_leading_zeros()}`;
     
+    //Calculating the end time by inputing duration in minutes
+      //Converting it all to minutes
     let allMinutes = this.date.getHours() * 60 + this.date.getMinutes() + this.formDuration;
+      //Converting minutes into hh:mm:ss time format
     let getHour = (allMinutes/60);
     let rGetHour = Math.floor(getHour)
     let minutes = (getHour - rGetHour) * 60;
-    let rMinutes = Math.round(minutes);
-    this.formEnd = `${rGetHour}:${rMinutes}:${this.date.getSeconds()}`;
+    let rMinutes:any = Math.round(minutes);
+      //Leading zeroes in minutes
+    if(rMinutes < 10){
+      rMinutes = '0' + rMinutes;
+    }else{
+      rMinutes =  rMinutes;
+    }
+
+    this.formEnd = `${rGetHour}:${rMinutes}:${this.seconds_with_leading_zeros(this.date)}`;
   },1000)
 }
 
@@ -42,7 +57,7 @@ ngOnInit():void{
   public formName:string;
   public formStart:string =  `${this.hours12Format}:${this.seconds_with_leading_zeros()}:${this.date.getSeconds()}`;
   public formEnd:any;
-  public formDuration:number = 0;
+  public formDuration:number = null;
   public formBalance:string;
 
   public inputs:any[] = []
@@ -55,7 +70,10 @@ ngOnInit():void{
   onFormSubmit = () =>{
     this.inputs.push({id:this.formId,name:this.formName,start:this.formStart,end:this.formEnd,duration:this.formDuration,balance:this.formBalance});
     this.formId++;
-    console.log(this.date)
+    //Clearing the form
+    this.formName = "";
+    this.formDuration = null;
+    this.formBalance = "";
   }
 
 }

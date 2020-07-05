@@ -1,5 +1,18 @@
 <form #inputForm="ngForm" class="form">
 
+    <div class="form__grouping">
+        <label class="form__label" for="">NAME: </label>
+        <input [(ngModel)]="formName" required name="name" class="form__input" type="text">
+    </div>
+
+    <div class="form__grouping">
+        <label class="form__label" for="">DURATION(MINUTES):  </label>
+        <input [(ngModel)]="formDuration" required  name="duration" class="form__input" type="number">
+    </div>
+    <div class="form__grouping">
+        <label class="form__label" for="">BALANCE: </label>
+        <input [(ngModel)]="formBalance" required  name="balance" class="form__input" type="text">
+    </div>
    
     <div class="form__grouping">
         <label class="form__label" for="">ID: </label>
@@ -13,21 +26,9 @@
         <label class="form__label" for="">END: </label>
         <input [(ngModel)]="formEnd" disabled  name="end" class="form__input" type="text">
     </div>
-    <div class="form__grouping">
-        <label class="form__label" for="">NAME: </label>
-        <input [(ngModel)]="formName" name="name" class="form__input" type="text">
-    </div>
-
  
-    <div class="form__grouping">
-        <label class="form__label" for="">DURATION(MINUTES):  </label>
-        <input [(ngModel)]="formDuration"  name="duration" class="form__input" type="number">
-    </div>
-    <div class="form__grouping">
-        <label class="form__label" for="">BALANCE: </label>
-        <input [(ngModel)]="formBalance"  name="balance" class="form__input" type="text">
-    </div>
-    <button (click)="onFormSubmit()" class="form__submit" type="submit">Submit</button>
+    <button (click)="onFormSubmit()" [disabled]="inputForm.invalid" class="form__submit" type="submit">Submit</button>
+
 </form>
 <hr>
 <table class="timer-table">

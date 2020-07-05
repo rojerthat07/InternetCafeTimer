@@ -15,8 +15,11 @@
         padding:.5em 1em;
         .form__input{
             font-size: .8em;
+            font-family: font("font6");
+          
         }
         .form__label{
+            color:$color3;
             font-size: .7em;
            margin: auto 0;
             
