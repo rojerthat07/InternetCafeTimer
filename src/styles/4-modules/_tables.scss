@@ -21,10 +21,11 @@
             color:white;
         }
     }
-    .timer-row:first-child{
-        background-color: $color3;
-    }
+  
     .timer-row:nth-child(odd){
         background-color: $color4;
+    }
+    .timer-row:first-child{
+       border-bottom: 1px solid rgb(243, 217, 217);
     }
 }
