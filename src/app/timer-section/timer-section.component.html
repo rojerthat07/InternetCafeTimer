@@ -7,7 +7,7 @@
     </div>
 
     <div class="form__grouping form-group">
-        <label class="form__label" for="">DURATION(MINUTES):  </label>
+        <label class="form__label" for="">MINUTES:  </label>
         <input [(ngModel)]="formDuration" required [class.is-invalid]="duration.invalid && duration.touched" #duration="ngModel" name="duration" class="form__input form-control" type="number">
     </div>
     <div class="form__grouping form-group">
@@ -28,7 +28,7 @@
         <input [(ngModel)]="formEnd" disabled  name="end" class="form__input form-control" type="text">
     </div>
  
-    <button (click)="onFormSubmit()" [disabled]="inputForm.invalid" class="form__submit" type="submit">Submit</button>
+    <button (click)="onFormSubmit()" [style.cursor]="inputForm.invalid ? 'not-allowed' : 'pointer' " [disabled]="inputForm.invalid" class="form__submit" type="submit">Submit</button>
 
 </form>
 <hr>

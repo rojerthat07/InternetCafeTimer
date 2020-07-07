@@ -21,7 +21,7 @@
         }
         .form__label{
             color:$color3;
-            font-size: .7em;
+            font-size: 1em;
            margin: auto 0;
             
         }
@@ -36,7 +36,7 @@
         transition: .5s;
         &:hover{
             color:white;
-            background-color: $color3;
+            background-color: darken($color3, 20%);
         }
     }
 }

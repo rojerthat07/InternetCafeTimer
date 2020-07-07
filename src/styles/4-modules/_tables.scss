@@ -3,7 +3,9 @@
     border:1px solid black;
     border-collapse: collapse;
     text-align: center;
+    background-color: rgba(0,0,0,0.8);
     
+
     .timer-row{
         .timer-heading{
             padding:0.5em 2em;
@@ -18,6 +20,9 @@
             text-transform: uppercase;
             color:white;
         }
+    }
+    .timer-row:first-child{
+        background-color: $color3;
     }
     .timer-row:nth-child(odd){
         background-color: $color4;

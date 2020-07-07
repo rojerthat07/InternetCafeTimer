@@ -1,10 +1,12 @@
 .navbar{
     background-color: black;
+    border-bottom: .3em double $color4;
     
     .navbar-brand{
         font-family: font("font6");
         text-transform: uppercase;
-        font-size: 1em;
+        font-size: 1.5em;
+        transition: .5s;
         &:hover{
             color:$color3;
         }
