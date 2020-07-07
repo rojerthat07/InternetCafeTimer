@@ -47,8 +47,8 @@ ngOnInit():void{
     }else{
       rMinutes =  rMinutes;
     }
-
-    this.formEnd = `${rGetHour}:${rMinutes}:${this.seconds_with_leading_zeros(this.date)}`;
+   
+    this.formEnd = `${(rGetHour > 12 ?  rGetHour - 12 : rGetHour )}:${rMinutes}:${this.seconds_with_leading_zeros(this.date)}`;
   },1000)
 }
 
