@@ -22,10 +22,14 @@
         }
     }
   
-    .timer-row:nth-child(odd){
+    .timer-row:nth-child(even){
         background-color: $color4;
     }
     .timer-row:first-child{
-       border-bottom: 1px solid rgb(243, 217, 217);
+      color:white;
+      td{
+          font-size: 2em;
+        color:red;
+      }
     }
 }

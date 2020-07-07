@@ -58,8 +58,8 @@ ngOnInit():void{
   public formStart:string =  `${this.hours12Format}:${this.seconds_with_leading_zeros()}:${this.date.getSeconds()}`;
   public formEnd:any;
   public formDuration:number = null;
-  public formBalance:string;
-
+  public formBalance:number;
+  public totalBalance:number = null;
   public inputs:any[] = []
 
   constructor() { 
@@ -68,12 +68,17 @@ ngOnInit():void{
   }
 
   onFormSubmit = () =>{
+    //Pushing data to the main inputs Array
     this.inputs.push({id:this.formId,name:this.formName,start:this.formStart,end:this.formEnd,duration:this.formDuration,balance:this.formBalance});
     this.formId++;
+    //  
+
     //Clearing the form
     this.formName = "";
+    this.totalBalance += this.formBalance;
     this.formDuration = null;
-    this.formBalance = "";
+    this.formBalance = null;
+   
   }
 
 }

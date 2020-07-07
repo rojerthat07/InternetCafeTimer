@@ -12,7 +12,7 @@
     </div>
     <div class="form__grouping form-group">
         <label class="form__label" for="">BALANCE: </label>
-        <input [(ngModel)]="formBalance" required [class.is-invalid]="balance.invalid && balance.touched" #balance="ngModel" name="balance" class="form__input form-control" type="text">
+        <input [(ngModel)]="formBalance" required [class.is-invalid]="balance.invalid && balance.touched" #balance="ngModel" name="balance" class="form__input form-control" type="number">
     </div>
    
     <div class="form__grouping form-group">
@@ -33,6 +33,9 @@
 </form>
 <hr>
 <table class="timer-table">
+    <tr *ngIf="totalBalance > 0" class="timer-row" >
+    <td colspan="6">{{totalBalance}}</td>
+    </tr>
     <tr class="timer-row">
         <th class="timer-heading">ID</th>
         <th class="timer-heading">NAME</th>
@@ -50,3 +53,4 @@
         <td class="timer-data">{{input.balance}}</td>
     </tr>
 </table>
+
