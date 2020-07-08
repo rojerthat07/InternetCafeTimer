@@ -7,15 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TimerSectionComponent implements OnInit {
 
-
-
   //Date and time
   public date:any = new Date();
   public hours12Format:string = (this.date.getHours() > 12 ?  this.date.getHours() - 12 : this.date.getHours() );
-  
-
-
-  
 
   //to diplay minutes with leading zeroes
 seconds_with_leading_zeros =(date = this.date) =>{ 
@@ -25,7 +19,6 @@ seconds_with_leading_zeros =(date = this.date) =>{
 minutes_with_leading_zeros =(date = this.date) =>{ 
   return (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
 }
-
 
 ngOnInit():void{
   setInterval(()=>{
@@ -47,8 +40,16 @@ ngOnInit():void{
     }else{
       rMinutes =  rMinutes;
     }
-   
     this.formEnd = `${(rGetHour > 12 ?  rGetHour - 12 : rGetHour )}:${rMinutes}:${this.seconds_with_leading_zeros(this.date)}`;
+
+
+    //Checking if there is someone that his time is ended
+    this.endTime.forEach(e =>{
+      if(e == this.formStart){
+        console.log("time is ended")
+      }
+      
+    })
   },1000)
 }
 
@@ -60,10 +61,10 @@ ngOnInit():void{
   public formDuration:number = null;
   public formBalance:number;
   public totalBalance:number = null;
-  public inputs:any[] = []
+  public inputs:any[] = [];
+  public endTime:any[] = [];
 
   constructor() { 
-
   
   }
 
@@ -72,6 +73,8 @@ ngOnInit():void{
     this.inputs.push({id:this.formId,name:this.formName,start:this.formStart,end:this.formEnd,duration:this.formDuration,balance:this.formBalance});
     this.formId++;
     //  
+    this.endTime.push(this.formEnd);
+    console.log(this.endTime)
 
     //Clearing the form
     this.formName = "";
