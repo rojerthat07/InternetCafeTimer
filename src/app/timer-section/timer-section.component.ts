@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PaySound} from '../../media/audio/Pay.mp3';
 
 @Component({
   selector: 'app-timer-section',
