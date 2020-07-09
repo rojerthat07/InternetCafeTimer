@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {PaySound} from '../../media/audio/Pay.mp3';
+
 
 @Component({
   selector: 'app-timer-section',
@@ -48,11 +48,23 @@ ngOnInit():void{
     this.endTime.forEach(e =>{
       if(e == this.formStart){
         console.log("time is ended")
+
+        //Play Time out audio
+        let audio = new Audio();
+        audio.src = "../../assets/audio/Time-out.mp3";
+        audio.load();
+        audio.play();
       }
       
     })
   },1000)
 }
+
+  //Sound effect for paying
+
+
+
+ 
 
   //Forms Input 2 way data binding
   public formId:number = 1;
@@ -82,7 +94,12 @@ ngOnInit():void{
     this.totalBalance += this.formBalance;
     this.formDuration = null;
     this.formBalance = null;
-   
+
+    //Play Pay Sound Effect
+    let audio = new Audio();
+    audio.src = "../../assets/audio/Pay.mp3";
+    audio.load();
+    audio.play();
   }
 
 }
