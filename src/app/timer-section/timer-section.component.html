@@ -34,7 +34,7 @@
 <hr>
 <table class="timer-table">
     <tr *ngIf="totalBalance > 0" class="timer-row" >
-    <td colspan="6">{{totalBalance}}</td>
+    <td colspan="7">{{totalBalance}}</td>
     </tr>
     <tr class="timer-row">
         <th class="timer-heading">ID</th>
@@ -53,8 +53,8 @@
         <td class="timer-data">{{input.duration}}</td>
         <td class="timer-data">{{input.balance}}</td>
         <td class="timer-data">
-            <button>Y</button>
-            <Button>N</Button>
+            <button (click)="getTableDataStatus(input.id)">Y</button>
+            <button>N</button>
         </td>
     </tr>
 </table>
