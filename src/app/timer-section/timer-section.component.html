@@ -43,6 +43,7 @@
         <th class="timer-heading">END</th>
         <th class="timer-heading">DURATION</th>
         <th class="timer-heading">Balance</th>
+        <th class="timer-heading">Status</th>
     </tr>
     <tr class="timer-row" *ngFor="let input of inputs">
         <td class="timer-data">{{input.id}}</td>
@@ -51,6 +52,10 @@
         <td class="timer-data">{{input.end}}</td>
         <td class="timer-data">{{input.duration}}</td>
         <td class="timer-data">{{input.balance}}</td>
+        <td class="timer-data">
+            <button>Y</button>
+            <Button>N</Button>
+        </td>
     </tr>
 </table>
 
