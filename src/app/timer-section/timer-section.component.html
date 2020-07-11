@@ -32,29 +32,28 @@
 
 </form>
 <hr>
-<table class="timer-table">
-    <tr *ngIf="totalBalance > 0" class="timer-row" >
+<table class="timer">
+    <tr *ngIf="totalBalance > 0" class="timer__row" >
     <td colspan="7">{{totalBalance}}</td>
     </tr>
-    <tr class="timer-row">
-        <th class="timer-heading">ID</th>
-        <th class="timer-heading">NAME</th>
-        <th class="timer-heading">START</th>
-        <th class="timer-heading">END</th>
-        <th class="timer-heading">DURATION</th>
-        <th class="timer-heading">Balance</th>
-        <th class="timer-heading">Status</th>
+    <tr class="timer__row">
+        <th class="timer__heading">ID</th>
+        <th class="timer__heading">NAME</th>
+        <th class="timer__heading">START</th>
+        <th class="timer__heading">END</th>
+        <th class="timer__heading">DURATION</th>
+        <th class="timer__heading">Balance</th>
+        <th class="timer__heading">Status</th>
     </tr>
-    <tr class="timer-row" *ngFor="let input of inputs">
-        <td class="timer-data">{{input.id}}</td>
-        <td class="timer-data">{{input.name}}</td>
-        <td class="timer-data">{{input.start}}</td>
-        <td class="timer-data">{{input.end}}</td>
-        <td class="timer-data">{{input.duration}}</td>
-        <td class="timer-data">{{input.balance}}</td>
-        <td class="timer-data">
-            <button (click)="getTableDataStatus(input.id)">Y</button>
-            <button>N</button>
+    <tr class="timer__row" *ngFor="let input of inputs">
+        <td class="timer__data">{{input.id}}</td>
+        <td class="timer__data">{{input.name}}</td>
+        <td class="timer__data">{{input.start}}</td>
+        <td class="timer__data">{{input.end}}</td>
+        <td class="timer__data">{{input.duration}}</td>
+        <td class="timer__data">{{input.balance}}</td>
+        <td class="timer__data">
+            <button (click)="getTableDataStatus(input.id)" class="timer__button">Paid</button>
         </td>
     </tr>
 </table>

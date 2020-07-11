@@ -1,31 +1,48 @@
-.timer-table{
+.timer{
     margin:1em auto;
     border:1px solid black;
     border-collapse: collapse;
     text-align: center;
     background-color: rgba(0,0,0,0.8);
+
     
 
-    .timer-row{
-        .timer-heading{
+    .timer__row{
+        .timer__heading{
             padding:0.5em 2em;
             border-right: 1px solid black;
         }
       
-        .timer-data{
+        .timer__data{
             border-right: 1px solid black;
             padding:0.5em 2em;
             font-weight: lighter;
             font-family: font("font7");
             text-transform: uppercase;
             color:white;
+            .timer__button{
+                border:none;
+                color:$color1;
+                background-color: $color4;
+                border:2px solid black;
+                font-family: font("font6");
+                margin:.2em;
+                transition: .2s;
+                text-transform: uppercase;
+    
+                &:hover{
+                         
+                    background-color: black;
+                    border: 1px solid white;
+                }
+            }
         }
     }
   
-    .timer-row:nth-child(even){
+    .timer__row:nth-child(even){
         background-color: $color4;
     }
-    .timer-row:first-child{
+    .timer__row:first-child{
       color:white;
       td{
           font-size: 2em;

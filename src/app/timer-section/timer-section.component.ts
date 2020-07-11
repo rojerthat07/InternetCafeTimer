@@ -90,18 +90,28 @@ export class TimerSectionComponent implements OnInit {
     audio.src = "../../assets/audio/Pay.mp3";
     audio.load();
     audio.play();
+
   }
 
+
+
+  //Paid Function
   getTableDataStatus = (id) => {
 
-    this.inputs.forEach((e,index,array) =>{
-      
-  
-      if(e.id == id){
-        this.inputs.splice(index,1)
-      }
+    let confirmationAlert = confirm("CONFIRMATION!");
+    //First it will prompt a confirmation and if the confirmation is true it will marked the table data as paid and it will be removed in the array
+    if (confirmationAlert == true) {
+      //The function of this is to loop through the input array and if the e.id(input.id) == id(id that is generated upon creating table data) it will removed it as it will shows that it is paid
+      this.inputs.forEach((e,index,array) =>{
+        if(e.id == id){
+          this.inputs.splice(index,1)
+        }
+      })
 
-    })
+    } 
+      
+
+   
     
   }
 
