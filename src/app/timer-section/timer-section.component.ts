@@ -98,7 +98,7 @@ export class TimerSectionComponent implements OnInit {
   //Paid Function
   getTableDataStatus = (id) => {
 
-    let confirmationAlert = confirm("CONFIRMATION!");
+    let confirmationAlert = confirm("Is the user is Paid and does not have enough time?");
     //First it will prompt a confirmation and if the confirmation is true it will marked the table data as paid and it will be removed in the array
     if (confirmationAlert == true) {
       //The function of this is to loop through the input array and if the e.id(input.id) == id(id that is generated upon creating table data) it will removed it as it will shows that it is paid
